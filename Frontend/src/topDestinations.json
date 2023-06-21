@@ -1,0 +1,77 @@
+[
+    {
+        "name": "Jaipur",
+        "description": "Jaipur, the capital of Rajasthan, is known for its rich history, vibrant culture, and stunning architecture. Explore magnificent palaces like the Hawa Mahal and City Palace, visit the iconic Amber Fort, and immerse yourself in the bustling markets of the Pink City.",
+        "image": "https://example.com/images/jaipur.jpg"
+    },
+    {
+        "name": "Goa",
+        "description": "Goa, famous for its beautiful beaches and vibrant nightlife, is a popular tourist destination in India. Enjoy sunbathing on the sandy shores, indulge in water sports, explore the colonial architecture of Old Goa, and savor delicious seafood cuisines.",
+        "image": "https://example.com/images/goa.jpg"
+    },
+    {
+        "name": "Kerala",
+        "description": "Kerala, also known as God's Own Country, offers serene backwaters, lush tea plantations, and diverse wildlife. Experience a houseboat cruise in the backwaters of Alleppey, witness the enchanting Athirapally Waterfalls, and rejuvenate with Ayurvedic treatments.",
+        "image": "https://example.com/images/kerala.jpg"
+    },
+    {
+        "name": "Agra",
+        "description": "Agra is home to the iconic Taj Mahal, one of the Seven Wonders of the World. Marvel at the breathtaking beauty of this white marble mausoleum, explore the grand Agra Fort, and discover the architectural wonders of Fatehpur Sikri.",
+        "image": "https://example.com/images/agra.jpg"
+    },
+    {
+        "name": "Leh-Ladakh",
+        "description": "Leh-Ladakh, nestled in the Himalayas, offers stunning landscapes and adventure opportunities. Experience the breathtaking views of Pangong Lake, ride through the scenic valleys on a bike, and explore ancient monasteries like Hemis and Thiksey.",
+        "image": "https://example.com/images/leh-ladakh.jpg"
+    },
+    {
+        "name": "Rishikesh",
+        "description": "Rishikesh, located in Uttarakhand, is a spiritual and adventure hub. Known as the Yoga Capital of the World, it offers yoga and meditation retreats. Explore the famous Laxman Jhula and Ram Jhula suspension bridges, indulge in river rafting in the Ganges, and visit the ancient temples.",
+        "image": "https://example.com/images/rishikesh.jpg"
+    },
+    {
+        "name": "Munnar",
+        "description": "Munnar, situated in the Western Ghats of Kerala, is a picturesque hill station renowned for its tea plantations and stunning landscapes. Enjoy panoramic views from the Echo Point, visit the tea museums, trek to Anamudi Peak, and spot exotic wildlife in Eravikulam National Park.",
+        "image": "https://example.com/images/munnar.jpg"
+    },
+    {
+        "name": "Udaipur",
+        "description": "Udaipur, known as the City of Lakes, is a romantic destination in Rajasthan. Explore the majestic City Palace, take a boat ride on Lake Pichola, visit the serene Jag Mandir and Jag Niwas (Lake Palace), and experience the vibrant markets and cultural performances.",
+        "image": "https://example.com/images/udaipur.jpg"
+    },
+    {
+        "name": "Kolkata",
+        "description": "Kolkata, the cultural capital of India, offers a blend of history, art, and delicious cuisine. Visit the iconic Victoria Memorial, explore the bustling streets of Park Street, enjoy a boat ride on the Hooghly River, and savor the famous Bengali sweets.",
+        "image": "https://example.com/images/kolkata.jpg"
+    },
+    {
+        "name": "Hampi",
+        "description": "Hampi, a UNESCO World Heritage Site in Karnataka, is an ancient city filled with intriguing ruins and temples. Marvel at the intricate architecture of the Virupaksha Temple, explore the ruins of the Vijayanagara Empire, and witness the iconic stone chariot at the Vittala Temple complex.",
+        "image": "https://example.com/images/hampi.jpg"
+    },
+    {
+        "name": "Spiti Valley",
+        "description": "Spiti Valley, located in Himachal Pradesh, is a high-altitude desert region surrounded by snow-capped mountains. Explore ancient monasteries like Key Monastery and Tabo Monastery, witness the breathtaking landscapes, trek to Chandratal Lake, and experience the unique culture of the Spitian people.",
+        "image": "https://example.com/images/spiti_valley.jpg"
+    },
+    {
+        "name": "Pondicherry",
+        "description": "Pondicherry, also known as Puducherry, is a charming coastal town with a French influence in Tamil Nadu. Stroll through the vibrant streets of White Town, visit the famous Aurobindo Ashram, relax on the picturesque beaches, and enjoy the delicious French and South Indian cuisine.",
+        "image": "https://example.com/images/pondicherry.jpg"
+    },
+    {
+        "name": "Jaisalmer",
+        "description": "Jaisalmer, located in the heart of the Thar Desert in Rajasthan, is known as the Golden City. Explore the magnificent Jaisalmer Fort, take a camel safari in the sand dunes of Sam, visit the intricately carved havelis, and witness the mesmerizing sunset over the desert.",
+        "image": "https://example.com/images/jaisalmer.jpg"
+    },
+    {
+        "name": "Kochi",
+        "description": "Kochi, also known as Cochin, is a vibrant city in Kerala known for its rich history and colonial architecture. Explore the historic Fort Kochi area, visit the iconic Chinese Fishing Nets, experience the colorful Kathakali dance performances, and savor the delicious seafood.",
+        "image": "https://example.com/images/kochi.jpg"
+    },
+    {
+        "name": "Darjeeling",
+        "description": "Darjeeling, nestled in the Himalayas of West Bengal, is famous for its tea gardens and panoramic views of the snow-capped mountains. Take a ride on the UNESCO-listed Darjeeling Himalayan Railway (Toy Train), visit the Tiger Hill viewpoint, and indulge in a cup of Darjeeling tea.",
+        "image": "https://example.com/images/darjeeling.jpg"
+    }
+]
