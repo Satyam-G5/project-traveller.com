@@ -56,10 +56,10 @@ const guideLogin = () => {
         <>
             <div className="flex flex-col items-center justify-center h-screen p-3 mt-2 border-yellow-400">
                 <div className="bg-slate-900 p-8 mx-auto rounded shadow-md w-1/3">
-                    <h2 className="text-2xl font-bold mb-4">Create Guide Account</h2>
+                    <h2 className="text-2xl font-bold mb-4 text-white">Create Guide Account</h2>
                     <form>
                         <div className="mb-4">
-                            <label htmlFor="name" className="block mb-2">
+                            <label htmlFor="name" className="block mb-2 text-white">
                                 Name :
                             </label>
                             <input
@@ -70,7 +70,7 @@ const guideLogin = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="name" className="block mb-2">
+                            <label htmlFor="name" className="block mb-2 text-white">
                                 Enter location State :
                             </label>
                             <input
@@ -81,7 +81,7 @@ const guideLogin = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="age" className="block mb-2">
+                            <label htmlFor="age" className="block mb-2 text-white">
                                 Age :
                             </label>
                             <input
@@ -92,7 +92,7 @@ const guideLogin = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="email" className="block mb-2">
+                            <label htmlFor="email" className="block mb-2 text-white">
                                 Email:
                             </label>
                             <input
@@ -103,7 +103,7 @@ const guideLogin = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="password" className="block mb-2">
+                            <label htmlFor="password" className="block mb-2 text-white">
                                 Password:
                             </label>
                             <input
@@ -116,7 +116,7 @@ const guideLogin = () => {
                         <button
                             type="submit"
                             onClick={saveUser}
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                            className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
                         >
                             Create Account
                         </button>
