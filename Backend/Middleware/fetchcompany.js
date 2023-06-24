@@ -1,3 +1,6 @@
+//***************** not  used ***************
+
+
 const jwt = require("jsonwebtoken");
 
 const jwt_secretkey = "companysidesecreatkeyknownonlytome"  // JWT secret key for token generation (Company side )

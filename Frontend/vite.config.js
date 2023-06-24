@@ -15,6 +15,9 @@ export default defineConfig({
       },
       "/getuser": {
         target: "http://localhost:8000"
+      },
+      "/getcmp": {
+        target: "http://localhost:8000"
       }
     },
 

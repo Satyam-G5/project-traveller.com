@@ -7,6 +7,7 @@ export const AuthProvider = ({ children }) => {
     const [newuser, setNewuser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [loggedin, setLoggedin] = useState(false);
+    const [guide , setGuide] = useState (null)
 
     useEffect(() => {
         const getUserDetails = async () => {
@@ -45,6 +46,8 @@ export const AuthProvider = ({ children }) => {
         getUserDetails();
     }, [token]);
 
+
+
     const login = (newToken) => {
         setToken(newToken);
         setLoading(true)
@@ -62,7 +65,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{ token, newuser, loggedin, login, logout }}>
+        <AuthContext.Provider value={{ token, newuser, loggedin, guide , login, logout }}>
             {children}
         </AuthContext.Provider>
     );

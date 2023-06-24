@@ -10,6 +10,8 @@ import Topdestination from './components/topdestination';
 import GuideLogin from './components/guideLogin';
 import SignIn from "./components/singIn";
 import Profile from './components/profile';
+import Hotels from './components/hotels';
+import All_guide from './components/all_guide';
 
 import { AuthProvider } from './context/AuthContext';
 
@@ -29,6 +31,10 @@ function App() {
               <Route path="/User_signIn" element={<><SignIn /><Navbar /><Footer /></>} />
 
               <Route path="/travelogue" element={<><Travelogue /><Navbar /><Footer /></>} />
+
+              <Route path="/hotels" element={<><Hotels /><Navbar /><Footer /></>} />
+
+              <Route path="/guides" element={<><All_guide /><Navbar /><Footer /></>} />
 
               <Route path="/user_profile" element={<><Profile /><Navbar /><Footer /></>} />
 

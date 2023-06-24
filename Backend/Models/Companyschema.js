@@ -9,6 +9,12 @@ const companyData = new mongoose.Schema({
         type: Number,
         required: true
     },
+
+    // gender: {
+    //     type : String,
+    //     // enum : ["Male" , "Female"],
+    //     required: true
+    // },
     location: {
         type: String,
         required: true

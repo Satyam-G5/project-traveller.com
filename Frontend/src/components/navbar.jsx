@@ -9,7 +9,7 @@ function navbar() {
 
 
     const { newuser } = useContext(AuthContext)
-    console.log("From Navbar", newuser);
+    // console.log("From Navbar", newuser);
     return (
 
 
@@ -22,9 +22,9 @@ function navbar() {
             </div>
             <div className="flex flex-row justify-evenly mt-1 mr-2">
                 <Link to="/" className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Home</Link>
-                <Link className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Hotels</Link>
-                <Link className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Guide</Link>
-                <Link to="/top-destination" className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Destination</Link>
+                <Link to ="/hotels" className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Hotels</Link>
+                <Link to ="/guides" className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Guide</Link>
+                <Link to="/top-destination" className='text-xl text-gray-600 p-6 hover:cursor-pointer hover:text-gray-950 '>Top Destination</Link>
             </div>
 
 

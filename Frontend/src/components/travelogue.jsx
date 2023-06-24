@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import touristPlace from "../touristPlace.json";
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { AuthContext } from "../context/AuthContext";
 
 const travelogue = () => {
@@ -72,24 +72,24 @@ const travelogue = () => {
                                 </div>
                             </div>
                             <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                                <div className="flex flex-col items-start">
-                                    <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                        <img className="h-6 w-6 text-white" aria-hidden="true" />
+                                <Link to="/guides">
+                                    <div className="border-white border-2 p-2 flex flex-col items-start hover:cursor-pointer hover:bg-slate-950 rounded-lg hover:scale-x-105 hover:translate-y-1 transition ease-in-out duration-300 ">
+
+                                        <dt className="mt-4 font-semibold text-white ">Choose Guide</dt>
+                                        <dd className="mt-2 leading-7 text-gray-400">
+                                            Our guide are know what's best for you , with all the local knowledge they are bound to make journey smooth one .
+                                        </dd>
                                     </div>
-                                    <dt className="mt-4 font-semibold text-white">Choose Guide</dt>
-                                    <dd className="mt-2 leading-7 text-gray-400">
-                                        Our guide are know what's best for you , with all the local knowledge they are bound to make journey smooth one .
-                                    </dd>
-                                </div>
-                                <div className="flex flex-col items-start">
-                                    <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-                                        <img className="h-6 w-6 text-white" aria-hidden="true" />
+                                </Link>
+                                <Link>
+                                    <div className="border-white border-2 p-2 flex flex-col items-start  hover:cursor-pointer hover:bg-slate-950 rounded-lg hover:scale-x-105 hover:translate-y-1 transition ease-in-out duration-300">
+
+                                        <dt className="mt-4 font-semibold text-white">Choose Hotels</dt>
+                                        <dd className="mt-2 leading-7 text-gray-400">
+                                            We help in finding you the best hotel , with all our trusted partners you can be rest assured for your journey .
+                                        </dd>
                                     </div>
-                                    <dt className="mt-4 font-semibold text-white">Choose Hotels</dt>
-                                    <dd className="mt-2 leading-7 text-gray-400">
-                                        We help in finding you the best hotel , with all our trusted partners you can be rest assured for your journey .
-                                    </dd>
-                                </div>
+                                </Link>
                             </dl>
                         </div>
                         {foundPlace && (
