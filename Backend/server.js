@@ -13,6 +13,8 @@ app.use(express.json())   // build-in Middleware function for pasing json
 
 app.use("/", require("./Routes/user"))  // dealing with the user registration 
 app.use("/", require("./Routes/cmp"))   // dealing with the guide registration 
+app.use("/", require("./Routes/hotel"))   // dealing with the hotels (registration with admin pannel and accessable by user)
+
 
 
 app.listen(port, () => {

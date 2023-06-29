@@ -50,7 +50,9 @@ export const AuthProvider = ({ children }) => {
 
     const login = (newToken) => {
         setToken(newToken);
-        setLoading(true)
+        setLoading(true);
+        setLoggedin(true);
+
 
     };
 

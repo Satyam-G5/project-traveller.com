@@ -18,6 +18,9 @@ export default defineConfig({
       },
       "/getcmp": {
         target: "http://localhost:8000"
+      },
+      "/gethotels": {
+        target: "http://localhost:8000"
       }
     },
 
