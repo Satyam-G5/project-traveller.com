@@ -35,11 +35,12 @@ const travelogue = () => {
 
     return (
         <>
-            {loggedin ? (
-                <div>
-                    Please SignIn before accessing the page
+            {!loggedin ? (
+                <div className='mt-24 p-8 text-center '>
+                    <h1 className='text-center font-bold text-3xl text-white'>Please Sign In to continue ...</h1>
 
                 </div>
+
             ) : (
                 <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -81,7 +82,7 @@ const travelogue = () => {
                                         </dd>
                                     </div>
                                 </Link>
-                                <Link>
+                                <Link to="/hotels">
                                     <div className="border-white border-2 p-2 flex flex-col items-start  hover:cursor-pointer hover:bg-slate-950 rounded-lg hover:scale-x-105 hover:translate-y-1 transition ease-in-out duration-300">
 
                                         <dt className="mt-4 font-semibold text-white">Choose Hotels</dt>
