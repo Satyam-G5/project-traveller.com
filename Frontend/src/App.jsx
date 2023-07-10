@@ -12,6 +12,7 @@ import SignIn from "./components/singIn";
 import Profile from './components/profile';
 import Hotels from './components/hotels';
 import All_guide from './components/all_guide';
+import Plans from './components/plans';
 
 import { AuthProvider } from './context/AuthContext';
 
@@ -33,6 +34,8 @@ function App() {
               <Route path="/travelogue" element={<><Travelogue /><Navbar /><Footer /></>} />
 
               <Route path="/hotels" element={<><Hotels /><Navbar /><Footer /></>} />
+
+              <Route path="/plans" element={<><Plans /><Navbar /><Footer /></>} />
 
               <Route path="/guides" element={<><All_guide /><Navbar /><Footer /></>} />
 
@@ -56,3 +59,8 @@ function App() {
 }
 
 export default App
+
+
+
+//  key ID :  rzp_test_SzELy6av5lQSyI
+//  Key Secret : qsXKVIwtYwuJOeRIUKyWXSow 

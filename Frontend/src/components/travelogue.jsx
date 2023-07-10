@@ -5,7 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const travelogue = () => {
 
-    const { loggedin } = useContext(AuthContext);
+    const { loggedin , finalLocation } = useContext(AuthContext);
 
     const [location, setlocation] = useState("");
     const [foundPlace, setfoundPlace] = useState(null);
@@ -28,17 +28,23 @@ const travelogue = () => {
         if (foundPlace) {
             setfoundPlace(foundPlace)
             console.log("Found the place:", foundPlace.state);
+            finalLocation(foundPlace.state);
         } else {
             console.log("Place not found");
         }
+
     };
 
     return (
         <>
             {!loggedin ? (
-                <div className='mt-24 p-8 text-center '>
-                    <h1 className='text-center font-bold text-3xl text-white'>Please Sign In to continue ...</h1>
-
+                <div>
+                    <div className='mt-28 p-8 text-center flex-col justify-center items-center'>
+                        <h1 className='text-center font-bold text-3xl text-white'>Please Sign-In to continue ...</h1>
+                        <Link to="/User_signIn">
+                            <button className=' mt-8 bg-green-700 p-2 text-center rounded-lg hover:bg-green-900 text-white'>Sign In</button>
+                        </Link>
+                    </div>
                 </div>
 
             ) : (
@@ -46,9 +52,9 @@ const travelogue = () => {
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
                             <div className="max-w-xl lg:max-w-lg">
-                                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">We will find the best for you ...</h2>
+                                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Complete State Tourism :-)</h2> 
                                 <p className="mt-4 text-lg leading-8 text-gray-300">
-                                    Enter the name of the state you want to journey from in the search box below
+                                  We provide complete State tour covering all the famous places and monuments , please enter the Name of the State you want to travel :-)
                                 </p>
                                 <div className="mt-6 flex max-w-md gap-x-4">
                                     <label htmlFor="location" className="sr-only">
@@ -73,24 +79,24 @@ const travelogue = () => {
                                 </div>
                             </div>
                             <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                                <Link to="/guides">
+                            
                                     <div className="border-white border-2 p-2 flex flex-col items-start hover:cursor-pointer hover:bg-slate-950 rounded-lg hover:scale-x-105 hover:translate-y-1 transition ease-in-out duration-300 ">
 
-                                        <dt className="mt-4 font-semibold text-white ">Choose Guide</dt>
+                                        <dt className="mt-4 font-semibold text-white ">Guide Services</dt>
                                         <dd className="mt-2 leading-7 text-gray-400">
                                             Our guide are know what's best for you , with all the local knowledge they are bound to make journey smooth one .
                                         </dd>
                                     </div>
-                                </Link>
-                                <Link to="/hotels">
+                              
+                                
                                     <div className="border-white border-2 p-2 flex flex-col items-start  hover:cursor-pointer hover:bg-slate-950 rounded-lg hover:scale-x-105 hover:translate-y-1 transition ease-in-out duration-300">
 
-                                        <dt className="mt-4 font-semibold text-white">Choose Hotels</dt>
+                                        <dt className="mt-4 font-semibold text-white">Hotel Services</dt>
                                         <dd className="mt-2 leading-7 text-gray-400">
                                             We help in finding you the best hotel , with all our trusted partners you can be rest assured for your journey .
                                         </dd>
                                     </div>
-                                </Link>
+                           
                             </dl>
                         </div>
                         {foundPlace && (
@@ -144,10 +150,17 @@ const travelogue = () => {
                                     </div>
                                 </a>
 
+                                <button className='p-2 mt-4 text-center  flex'>
+                                    <Link to='/plans' className='p-4  rounded-lg  text-black text-center justify-center font-bold bg-green-500 hover:cursor-pointer hover:bg-green-700  '>
+                                        Plan your journey
+                                    </Link>
+                                </button>
 
                             </div>
                         )}
                     </div>
+
+
                 </div>
             )}
 

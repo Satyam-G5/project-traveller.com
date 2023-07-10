@@ -21,6 +21,12 @@ export default defineConfig({
       },
       "/gethotels": {
         target: "http://localhost:8000"
+      },
+      "/payment": {
+        target: "http://localhost:8000"
+      },
+      "/paymentDetails": {
+        target: "http://localhost:8000"
       }
     },
 

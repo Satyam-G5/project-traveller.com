@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
+import Image from "../download2.png"
 
 import { AuthContext } from '../context/AuthContext';
 
@@ -17,7 +18,7 @@ function navbar() {
         <nav className=" w-full h-20 bg-white fixed top-0 flex justify-between rounded-lg">
 
             <div className="rounded-lg">
-                <img className="p-2 w-40 h-20 object-cover  " src="https://thesujanlife.com/documents/35366/89973/travellerlogo.png/85daf9a7-11c8-ba81-3eba-54513cddd358?t=1573159572162" alt="Card Image" />
+                <img className="p-2 w-50 h-20 object-cover  " src={Image} alt="Card Image" />
 
             </div>
             <div className="flex flex-row justify-evenly mt-1 mr-2">

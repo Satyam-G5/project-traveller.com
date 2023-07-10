@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -7,7 +8,13 @@ export const AuthProvider = ({ children }) => {
     const [newuser, setNewuser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [loggedin, setLoggedin] = useState(false);
+    const [states , setStates] = useState("Location");
     const [guide , setGuide] = useState (null)
+    const [hotel , setHotel] = useState ({
+        h_name : null ,
+        s_price : null ,
+        d_price : null
+    })
 
     useEffect(() => {
         const getUserDetails = async () => {
@@ -19,7 +26,7 @@ export const AuthProvider = ({ children }) => {
                             'content-type': 'application/json',
                             'accept': 'application/json',
                             'jwt_token': token.jwt_token
-                            // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2Vyc2NoZW1hIjp7ImlkIjoiNjQ4YjdhYzA1YzUxNmYyOWM2YjRmNmJiIn0sImlhdCI6MTY4Njg3MjAxOH0.HAyCXQw913QshLWM1BhxTJCsGvuPxMDgZ1dMkXZfgeo"
+
                         },
                     });
 
@@ -53,7 +60,6 @@ export const AuthProvider = ({ children }) => {
         setLoading(true);
         setLoggedin(true);
 
-
     };
 
     const logout = () => {
@@ -66,8 +72,24 @@ export const AuthProvider = ({ children }) => {
         return <div>Loading...</div>; // or any loading indicator component
     }
 
+    const book_guide = (guide_details) => {
+        setGuide(guide_details)
+    }
+
+    const book_hotel = (hName , Sprice , Dprice) => {
+        setHotel({
+            h_name : hName ,
+            s_price : Sprice , 
+            d_price : Dprice
+        })
+    }
+
+    const finalLocation = (setlocation) => {
+        setStates(setlocation)
+    }
+
     return (
-        <AuthContext.Provider value={{ token, newuser, loggedin, guide , login, logout }}>
+        <AuthContext.Provider value={{ token, newuser, loggedin,states, guide ,hotel , book_hotel, finalLocation , login, logout , book_guide }}>
             {children}
         </AuthContext.Provider>
     );

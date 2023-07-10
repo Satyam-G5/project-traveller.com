@@ -66,7 +66,7 @@ const Login_page = () => {
               <input
                 type="text"
                 id="Name"
-                className="w-full border border-gray-300 rounded py-2 px-3"
+                className="w-full border border-gray-300 rounded text-black py-2 px-3"
                 onChange={handleChange}
               />
             </div>
@@ -77,7 +77,7 @@ const Login_page = () => {
               <input
                 type="number"
                 id="age"
-                className="w-full border border-gray-300 rounded py-2 px-3"
+                className="w-full border border-gray-300 rounded text-black py-2 px-3"
                 onChange={handleChange}
               />
             </div>
@@ -88,7 +88,7 @@ const Login_page = () => {
               <input
                 type="email"
                 id="email"
-                className="w-full border border-gray-300 rounded py-2 px-3"
+                className="w-full border border-gray-300 rounded text-black py-2 px-3"
                 onChange={handleChange}
               />
             </div>
@@ -99,7 +99,7 @@ const Login_page = () => {
               <input
                 type="password"
                 id="password"
-                className="w-full border border-gray-300 rounded py-2 px-3"
+                className="w-full border border-gray-300 rounded text-black py-2 px-3"
                 onChange={handleChange}
               />
             </div>

@@ -1,9 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
 
 const all_guide = () => {
 
+  const { book_guide , guide } = useContext(AuthContext);
 
-    const [guidedetails, setGuidedetails] = useState([])
+    const [guidedetails, setGuidedetails] = useState([{
+      _id : "" , 
+      Name : "" , 
+      age  : "" , 
+      location  :  "" ,
+      email : " "
+    }])
+
+   
 
     useEffect(() => {
         fetchdata();
@@ -25,7 +36,13 @@ const all_guide = () => {
             console.log('Response received');
         } catch (error) {
             console.log('Error:', error.message);
+
         }
+    };
+
+    const book_my_guide = (guideName) => {
+      book_guide(guideName);
+      console.log(guideName);
     };
 
     return (
@@ -53,9 +70,13 @@ const all_guide = () => {
                   <p className="mt-2 text-sm text-black">Age: {guide.age}</p>
                   <p className="mt-2 text-sm text-black">Location: {guide.location}</p>
                   <p className="mt-2 text-sm text-black">Email: {guide.email}</p>
-                  <button className="mt-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                  <Link to = "/plans">
+                  <button className="mt-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  onClick={()=>book_my_guide(guide.Name)} 
+                  >
                     Book
                   </button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -37,7 +37,7 @@ const guideLogin = () => {
                 // a.state.update();
                 // console.log("Update done")
                 // console.log(a.state.loggedin);
-                navigate('/'); // Redirect to home page after successful guide login
+                navigate('/guides'); // Redirect to home page after successful guide login
 
             } else {
                 console.log('Data not saved');
