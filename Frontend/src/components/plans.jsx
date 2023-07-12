@@ -1,4 +1,4 @@
-import React, { useContext , useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext';
 import Alert from '../components/alert';
@@ -6,87 +6,154 @@ import Alert from '../components/alert';
 
 
 const plans = () => {
-  
-  const {states , guide ,hotel} = useContext(AuthContext);
+
+  const { newuser, states, guide, hotel } = useContext(AuthContext);
   const [amt, setAmt] = useState(0);
+  const [travel, setTravel] = useState({
+    stateName: "",
+    HotelName: "",
+    guideName: "",
+    userName: "",
+    amount: "",
+    hotelLocation: "",
+    singleRoom: "",
+    doubleRoom: "",
+    email: "",
+    gmail: ""
+  })
 
-  const add_guide = (event) =>{
-    const isChecked = event.target.checked ;
-    const guide_amt = 5000 ;
-    setAmt(prevAmt => isChecked ? prevAmt + guide_amt : prevAmt - guide_amt );
+  const add_guide = (event) => {
+    const isChecked = event.target.checked;
+    const guide_amt = 5000;
+    setAmt(prevAmt => isChecked ? prevAmt + guide_amt : prevAmt - guide_amt);
     console.log(amt);
   };
 
-    const single = hotel.s_price ;
-    const double = hotel.d_price ;
+  const single = hotel.s_price;
+  const double = hotel.d_price;
 
-  const add_single_room = (event) =>{
-    const isChecked = event.target.checked ;
+  const add_single_room = (event) => {
+    const isChecked = event.target.checked;
 
-    setAmt(prevAmt => isChecked ? prevAmt + single : prevAmt - single );
+    setAmt(prevAmt => isChecked ? prevAmt + single : prevAmt - single);
     console.log(amt);
   };
 
-  const add_double_room = (event) =>{
-    const isChecked = event.target.checked ;
+  const add_double_room = (event) => {
+    const isChecked = event.target.checked;
 
-    setAmt(prevAmt => isChecked ? prevAmt + double : prevAmt - double );
+    setAmt(prevAmt => isChecked ? prevAmt + double : prevAmt - double);
     console.log(amt);
   };
 
+  const save_travel = async () => {
+    setTravel({
+      stateName: states,
+      HotelName: hotel.h_name,
+      guideName: guide.g_name,
+      userName: newuser.Name,
+      amount: amt,
+      hotelLocation: hotel.location,
+      singleRoom: single,
+      doubleRoom: double,
+      email: newuser.email,
+      gmail: guide.gmail
+    })
 
-  
-  
+    try {
+      const {
+        stateName,
+        HotelName,
+        guideName,
+        userName,
+        amount,
+        hotelLocation,
+        singleRoom,
+        doubleRoom,
+        email,
+        gmail
+      } = travel;
+      const response = await fetch('/SetTraveldata', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+        stateName,
+        HotelName,
+        guideName,
+        userName,
+        amount,
+        hotelLocation,
+        singleRoom,
+        doubleRoom,
+        email,
+        gmail
+        }),
+      });
+
+      if (response.ok) {
+        console.log('Travel Details saved to Collection');
+
+      } else {
+        console.log('Travel Data not saved');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
 
   const handle_payment = async () => {
 
-  try {
-    const amount = amt ;
-    const data = await fetch('/payment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        amount,
-      }),
-    });
-  
-    if (data) {
-      const result = await data.json();
-      console.log(result);
-      const {success, order} = result;
-      const options = {
-        key: 'rzp_test_SzELy6av5lQSyI', // Enter the Key ID generated from the Dashboard
-        amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        currency: 'INR',
-        name: 'Traveller.com',
-        description: 'Test Transaction',
-        image: 'https://example.com/your_logo',
-        order_id: order.id, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: '/paymentDetails',
-        prefill: {
-          name: 'Gaurav Kumar',
-          email: 'gaurav.kumar@example.com',
-          contact: '9000090000',
+    try {
+      save_travel() ;
+      const amount = amt;
+      const data = await fetch('/payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        notes: {
-          address: 'Razorpay Corporate Office',
-        },
-        theme: {
-          color: '#3399cc',
-        },
-      };
-      const razor = new window.Razorpay(options);
-      razor.open();
-  
-      
-    } else {
-      console.log('Failed to receive data');
-    }   
-  } catch (error) {
-    console.log(error);
-  }
+        body: JSON.stringify({
+          amount,
+        }),
+      });
+
+      if (data) {
+        const result = await data.json();
+        console.log(result);
+        const { success, order } = result;
+        const options = {
+          key: 'rzp_test_SzELy6av5lQSyI', // Enter the Key ID generated from the Dashboard
+          amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+          currency: 'INR',
+          name: 'Traveller.com',
+          description: 'Test Transaction',
+          image: 'https://example.com/your_logo',
+          order_id: order.id, // This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+          callback_url: '/paymentDetails',
+          prefill: {
+            name: 'Gaurav Kumar',
+            email: 'gaurav.kumar@example.com',
+            contact: '9000090000',
+          },
+          notes: {
+            address: 'Razorpay Corporate Office',
+          },
+          theme: {
+            color: '#3399cc',
+          },
+        };
+        const razor = new window.Razorpay(options);
+        razor.open();
+
+      } else {
+        console.log('Failed to receive data');
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -102,8 +169,8 @@ const plans = () => {
 
 
             <p className="mt-6 text-base leading-7 text-gray-600">Your base price is zero , if you are willing to opt for the guide services then select from <Link className="text-green-700 hover:text-green-900 font-bold" to="/guides">AVAILABLE GUIDES</Link> Cost for Each guide is INR 5000 </p>
-        
-            {guide && <Alert type="success" message={`${guide} is selected as your personal guide`} />}
+
+            {guide.g_name && <Alert type="success" message={`${guide.g_name} is selected as your personal guide`} />}
 
             <li className="mt-6 flex gap-x-3">
 
@@ -112,7 +179,7 @@ const plans = () => {
 
             </li>
             <p className="mt-6 text-base leading-7 text-gray-600">Your base price is zero , Cost of guide is 2000 Rs each and all the hotels prices can be checked by visiting <Link className="text-green-700 hover:text-green-900 font-bold" to="/hotels">AVAILABLE HOTELS</Link> </p>
-            
+
             {hotel.h_name && <Alert type="success" message={`Hotel ${hotel.h_name} is selected for your stay `} />}
 
             <div className="mt-10 flex items-center gap-x-4">

@@ -14,7 +14,7 @@ function content() {
       <Link to="/travelogue" className="max-w-xs mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-6 hover:cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105" >
         <img className="w-full h-56 object-cover" src="https://assets.traveltriangle.com/blog/wp-content/uploads/2017/12/Dream-Vacation-Now.jpg" alt="Card Image" />
         <div className="p-4">
-          <h3 className="text-2xl font-medium text-gray-800 mb-2">Plan your travels</h3>
+          <h3 className="text-2xl font-medium text-gray-800 mb-2">Complete State Tourism </h3>
           <p className="text-gray-600">We find the best place of each state with our exclusive sevice of guide and hotels plan with us rest assured . </p>
           {/* <a href="#" className="text-blue-500 inline-flex items-center mt-4">Read More</a> */}
         </div>

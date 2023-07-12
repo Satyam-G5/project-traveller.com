@@ -1,5 +1,3 @@
-//***************** not  used ***************
-
 
 const jwt = require("jsonwebtoken");
 
@@ -11,15 +9,16 @@ fetchcompany = (req, res, next) => {
 
     const token = req.header("jwt_token")
     if (!token) {
-        res.status(401).json({ error: "Authentication error " });
+        res.status(401).json({ error: "Authentication error no token " });
     }
     try {
         const data = jwt.verify(token, jwt_secretkey)
         req.companyschema = data.companyschema
+        console.log(" From fetchcompany middleware", data.companyschema);
         next();
 
     } catch (error) {
-        res.status(401).json({ error: "Authentication error " });
+        res.status(401).json({ error: "Authentication error token not matched " });
     }
 
 

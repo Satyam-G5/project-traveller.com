@@ -13,6 +13,8 @@ import Profile from './components/profile';
 import Hotels from './components/hotels';
 import All_guide from './components/all_guide';
 import Plans from './components/plans';
+import GuideSignIn from './components/guideSignIn';
+import Guide_page from './components/guide_page';
 
 import { AuthProvider } from './context/AuthContext';
 
@@ -42,6 +44,10 @@ function App() {
               <Route path="/user_profile" element={<><Profile /><Navbar /><Footer /></>} />
 
               <Route path="/guide_login" element={<><GuideLogin /><Navbar /><Footer /></>} />
+
+              <Route path="/guide_signIN" element={<><GuideSignIn /><Navbar /><Footer /></>} />
+
+              <Route path="/guide_details" element={<><Guide_page /><Navbar /><Footer /></>} />
 
               <Route path="/top-destination" element={<><Topdestination /><Navbar /><Footer /></>} />
 

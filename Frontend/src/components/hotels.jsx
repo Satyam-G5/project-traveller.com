@@ -6,7 +6,7 @@ const hotels = () => {
 
 
   const [hotels, setHotels] = useState([])
-  const {hotel, book_hotel}= useContext(AuthContext)
+  const { book_hotel}= useContext(AuthContext)
 
   useEffect(() => {
     fetchdata();
@@ -29,8 +29,8 @@ const hotels = () => {
       console.log('Error:', error.message);
     }
   };
-  const book_my_hotel = (HotelName , s_price , d_price) => {
-    book_hotel(HotelName , s_price , d_price);
+  const book_my_hotel = (HotelName , s_price , d_price, locationcity) => {
+    book_hotel(HotelName , s_price , d_price, locationcity);
     console.log(HotelName);
   };
 
@@ -44,7 +44,7 @@ const hotels = () => {
         </p>
         <div className="mt-6 flex max-w-md gap-x-4">
           <label htmlFor="location" className="sr-only">
-            Enter the state you want to explore
+            Enter the loction U want to book hotel 
           </label>
           <input
             id="location"
@@ -52,7 +52,7 @@ const hotels = () => {
             type="text"
             required
             className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-            placeholder="Enter name of state"
+            placeholder="Enter Location"
           />
           <button
             type="submit"
@@ -85,7 +85,7 @@ const hotels = () => {
                 <p className="mt-2 text-sm text-black">Location: {data.locationcity} , {data.locationstate}</p>
                   <Link to="/plans">
                 <button className="mt-4 bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                onClick={()=>book_my_hotel(data.Hname ,data.singleroomprice , data.doubleroomprice)}
+                onClick={()=>book_my_hotel(data.Hname ,data.singleroomprice , data.doubleroomprice , data.locationcity)}
                 >
                     Book
                 </button>
