@@ -7,7 +7,7 @@ import Alert from '../components/alert';
 
 const plans = () => {
 
-  const { newuser, states, guide, hotel } = useContext(AuthContext);
+  const { newuser, states, guide, hotel ,date } = useContext(AuthContext);
   const [amt, setAmt] = useState(0);
   const [travel, setTravel] = useState({
     stateName: "",
@@ -19,7 +19,8 @@ const plans = () => {
     singleRoom: "",
     doubleRoom: "",
     email: "",
-    gmail: ""
+    gmail: "",
+    jdate : ""
   })
 
   const add_guide = (event) => {
@@ -57,7 +58,8 @@ const plans = () => {
       singleRoom: single,
       doubleRoom: double,
       email: newuser.email,
-      gmail: guide.gmail
+      gmail: guide.gmail,
+      jdate : date
     })
 
     try {
@@ -71,7 +73,8 @@ const plans = () => {
         singleRoom,
         doubleRoom,
         email,
-        gmail
+        gmail,
+        jdate
       } = travel;
       const response = await fetch('/SetTraveldata', {
         method: 'POST',
@@ -88,7 +91,8 @@ const plans = () => {
         singleRoom,
         doubleRoom,
         email,
-        gmail
+        gmail,
+        jdate
         }),
       });
 
@@ -161,6 +165,7 @@ const plans = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">So {states} it is !! Way to goo !!!</h2>
+          <h2 className="text-xl p-2 tracking-tight text-gray-900 sm:text-xl">Journey Date: {date} </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">Here's your final selection , choose hotels and guide which will you journey even more entertaining </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
@@ -168,7 +173,7 @@ const plans = () => {
             <h3 className="text-2xl font-bold tracking-tight text-gray-900">Choose Hotels and Guides </h3>
 
 
-            <p className="mt-6 text-base leading-7 text-gray-600">Your base price is zero , if you are willing to opt for the guide services then select from <Link className="text-green-700 hover:text-green-900 font-bold" to="/guides">AVAILABLE GUIDES</Link> Cost for Each guide is INR 5000 </p>
+            <p className="mt-6 text-base leading-7 text-gray-600">Travelling expenses are included when opting for guide select from <Link className="text-green-700 hover:text-green-900 font-bold" to="/guides">AVAILABLE GUIDES</Link> Guide Services costs INR 5000 </p>
 
             {guide.g_name && <Alert type="success" message={`${guide.g_name} is selected as your personal guide`} />}
 
