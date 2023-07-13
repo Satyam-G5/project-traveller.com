@@ -1,7 +1,5 @@
 const mongoose = require("mongoose");
 
-
-
 const userData = new mongoose.Schema({
     stateName: {
         type: String,
@@ -20,28 +18,22 @@ const userData = new mongoose.Schema({
         required: true
     },
     amount: Number,
-
     hotelLocation: {
         type: String,
-        
     },
-
-    singleRoom : Number ,
-
-    doubleRoom : Number ,
-
+    singleRoom: Number,
+    doubleRoom: Number,
     email: {
         type: String,
-        required: true,
-        unique: true
-    } ,
+        required: true
+    },
     gmail: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+    },
+    jdate: {
+        type: String
     }
-
 });
 
 module.exports = mongoose.model("travelData", userData);
-

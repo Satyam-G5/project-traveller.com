@@ -47,6 +47,10 @@ const guideLogin = () => {
         }
     };
 
+    const tosignin = () => {
+        navigate("/guide_signIN")
+    }
+
     const handleChange = (event) => {
         setUser({ ...user, [event.target.id]: event.target.value });  // dealing with the onchange event 
     };
@@ -113,13 +117,23 @@ const guideLogin = () => {
                                 onChange={handleChange}
                             />
                         </div>
+                        <div className='flex flex-row justify-between'>
                         <button
-                            type="submit"
+                            type="submit"  
                             onClick={saveUser}
                             className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
                         >
                             Create Account
                         </button>
+
+                        <button
+                            type="submit"  
+                            onClick={tosignin}
+                            className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
+                        >
+                            SignIn
+                        </button>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -19,7 +19,8 @@ const guide_page = () => {
         guideName: "",
         singleRoom: "",
         stateName: "",
-        userName: ""
+        userName: "",
+        jdate : ""
     }]);
 
     const handleLogout = () => {
@@ -75,8 +76,9 @@ const guide_page = () => {
                         guideName: firstItem.guideName,
                         hotelLocation: firstItem.hotelLocation,
                         singleRoom: firstItem.singleRoom,
-                        stateName: firstItem.state,
+                        stateName: firstItem.stateName,
                         userName: firstItem.userName,
+                        jdate: firstItem.jdate,
                         _id: firstItem._id,
                     }]);
                 }
@@ -139,6 +141,7 @@ const guide_page = () => {
                                 <div className='' key={item._id}>
                                     <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>Customer Name:</p> <p className='text-black'>{item.userName}</p></div>
                                     <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>State Tourism Pakage :</p> <p className='text-black'> {item.stateName} Tour</p></div>
+                                    <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>Journey Date :</p> <p className='text-black'> {item.jdate}</p></div>
                                     <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>Hotel Booked : </p> <p className='text-black'>{item.HotelName} , {item.hotelLocation} ,{item.stateName}</p></div>
                                     <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>Total Amount Paid :</p> <p className='text-black'> {item.amount} </p></div>
 

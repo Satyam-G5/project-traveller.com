@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
     const [newguide, setNewguide] = useState(null);
     const [loading, setLoading] = useState(true);
     const [loggedin, setLoggedin] = useState(false);
+    const [date , setDate] = useState(null);
     const [states , setStates] = useState("Location");
     const [guide , setGuide] = useState ({
         g_name : null ,
@@ -147,8 +148,12 @@ export const AuthProvider = ({ children }) => {
         setStates(setlocation)
     }
 
+    const addDate = (dateData) => {
+        setDate(dateData)
+    }
+
     return (
-        <AuthContext.Provider value={{ token, newuser, newguide , loggedin,states, guide ,hotel ,glogin, book_hotel, finalLocation , login, logout , book_guide }}>
+        <AuthContext.Provider value={{ token, newuser, date , newguide , loggedin,states, guide ,hotel , addDate ,glogin, book_hotel, finalLocation , login, logout , book_guide }}>
             {children}
         </AuthContext.Provider>
     );

@@ -8,15 +8,16 @@ const { body, validationResult } = require('express-validator');  // for input v
 router.post("/SetTraveldata",
     [
         body("stateName", "Correct state location").isLength({ max: 20, min: 4 }),
-        body("HotelName", "Correct state location").isLength({ max: 20, min: 3 }),
-        body("guideName", "Correct state location").isLength({ max: 20, min: 3 }),
-        body("userName", "Correct state location").isLength({ max: 20, min: 3 }),
-        body("amount", "Correct state location").isLength({ max: 20, min: 2 }),
-        body("hotelLocation", "Correct state location").isLength({ max: 20, min: 2 }),
-        body("singleRoom", "Correct state location").isLength({ max: 20, min: 2 }),
-        body("doubleRoom", "Correct state location").isLength({ max: 20, min: 2 }),
-        body("email", "Correct state location").isEmail(),
-        body("gmail", "Correct state location").isEmail(),
+        body("HotelName", "Correct hotelName").isLength({ max: 20, min: 3 }),
+        body("guideName", "Correct guidename").isLength({ max: 20, min: 3 }),
+        body("userName", "Correct username").isLength({ max: 20, min: 3 }),
+        body("amount", "Correct amount ").isLength({ max: 20, min: 2 }),
+        body("hotelLocation", "Correct hotel location").isLength({ max: 20, min: 2 }),
+        body("singleRoom", "Wrong Room single").isLength({ max: 20, min: 2 }),
+        body("doubleRoom", "Wrong Room double").isLength({ max: 20, min: 2 }),
+        // body("email", "Wrong input email").isEmail(),
+        // body("gmail", "Wrong input gmail").isEmail(),
+        body("jdate", "Correct date please").isDate(),
 
     ],
     async (req, res) => {
@@ -36,15 +37,15 @@ router.post("/SetTraveldata",
                     singleRoom: req.body.singleRoom,
                     doubleRoom: req.body.doubleRoom,
                     email: req.body.email,
-                    gmail: req.body.gmail
+                    gmail: req.body.gmail,
+                    jdate : req.body.jdate
                 });
 
-                res.json(TravelData);
+                res.status(200).json(TravelData);
 
                 await TravelData.save(); // saves in database
             } catch (error) {
-                console.error(error);
-                res.status(500).json({ error: "Server error" });
+                console.log(error)
             }
         }
     });
@@ -52,7 +53,7 @@ router.post("/SetTraveldata",
 
 
 router.post("/userTravelData" ,[
-    body("email", "Enter the correct email ").isEmail() 
+    // body("email", "Enter the correct email ").isEmail() 
 ] , async (req , res) => {
     try {
         const { email } = req.body;
@@ -64,7 +65,7 @@ router.post("/userTravelData" ,[
 })
 
 router.post("/guideTravelData" ,[
-    body("gmail", "Enter the correct email ").isEmail() 
+    // body("gmail", "Enter the correct email ").isEmail() 
 ] , async (req , res) => {
     try {
         const { gmail } = req.body;
