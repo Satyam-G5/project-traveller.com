@@ -147,12 +147,12 @@ const Profile = () => {
 
                                     <div className='flex flex-row p-1 justify-between'><p className='font-bold text-green-700'>Contact Guide : </p> <p className='text-black'>{item.gmail}</p></div>
 
-                                    <button
+                                    {/* <button
                                         className="mt-4 p-2 bg-red-500 hover:bg-green-700 text-white flex justify-center font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                     // onClick={handleLogout}
                                     >
                                         <p> Pending</p>
-                                    </button>
+                                    </button> */}
                                 </div>
                             ))}
                         </div>

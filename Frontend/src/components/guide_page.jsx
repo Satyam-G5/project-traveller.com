@@ -161,9 +161,9 @@ const GuidePage = () => {
                     <p className="font-bold text-green-700">Contact Info:</p>
                     <p className="text-black">{item.email}</p>
                   </div>
-                  <button className="mt-4 p-2 bg-red-500 hover:bg-green-700 text-white flex justify-center font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                  {/* <button className="mt-4 p-2 bg-red-500 hover:bg-green-700 text-white flex justify-center font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     <p>Accept</p>
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>
