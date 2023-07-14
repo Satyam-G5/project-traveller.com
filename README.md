@@ -1,16 +1,18 @@
 # Project Traveller
+![Screenshot 2023-07-13 112023](https://github.com/Satyam-G5/project-traveller.com/assets/126576749/6cbde879-64b0-4d5f-8208-16c3bd62ad7c)
 
-![Screenshot 2023-07-13 112023](https://github.com/Satyam-G5/project-traveller.com/assets/126576749/3986d5ba-164a-4182-8dad-cc3f281d7ef4)
+
 
 
 # Traveller
 
 Traveller is a state tourism website that offers comprehensive travel services, including guide services and hotel bookings. It provides an interactive platform for users to explore different states, plan their trips, and make secure payments through the integrated Razorpay payment system.
 
-![Screenshot 2023-07-13 112308](https://github.com/Satyam-G5/project-traveller.com/assets/126576749/c0fcf1dc-e363-41d6-a68b-bd2e90fa3ad5)
 
+![Screenshot 2023-07-13 112308](https://github.com/Satyam-G5/project-traveller.com/assets/126576749/f0598a21-fa92-4609-928f-64d22e3b9fab)
 
 ## Features
+
 
 - Browse and select state tourism packages
 - View detailed information about each state, including popular tourist destinations and activities
