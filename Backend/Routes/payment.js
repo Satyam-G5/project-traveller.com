@@ -12,8 +12,8 @@ router.post("/payment", async (req, res) => {
 
   try {
     const instance = new Razorpay({
-      key_id: 'rzp_test_SzELy6av5lQSyI',
-      key_secret: 'qsXKVIwtYwuJOeRIUKyWXSow'
+      key_id: process.env.RAZOR_Pay_KEY_ID,
+      key_secret: process.env.RAZOR_Pay_SECRET_KEY 
     });
 
     const options = {
@@ -32,7 +32,7 @@ router.post("/paymentDetails", async (req, res) => {
   const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = req.body;
   const body = razorpay_order_id + "|" + razorpay_payment_id;
 
-  const generated_signature = crypto.createHmac('sha256', 'qsXKVIwtYwuJOeRIUKyWXSow')
+  const generated_signature = crypto.createHmac('sha256', process.env.RAZOR_Pay_SECRET_KEY )
     .update(body.toString())
     .digest('hex');
 

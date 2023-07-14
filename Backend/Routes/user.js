@@ -9,7 +9,7 @@ const bcrypt = require("bcryptjs"); // hashing
 const jwt = require("jsonwebtoken"); // sending JWT tokens 
 
 
-const jwt_secretkey = "justsomesercetknowntonooneexceptme"  // JWT secret key for token generation 
+const jwt_secretkey = process.env.user_SECRET_KEY  // JWT secret key for token generation 
 
 // **********************     ROUTE : 1  Creating a user using POST "/createuser" (without login)  ******************************
 router.post("/createuser", [

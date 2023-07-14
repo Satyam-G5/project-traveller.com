@@ -1,7 +1,7 @@
 
 const jwt = require("jsonwebtoken");
 
-const jwt_secretkey = "companysidesecreatkeyknownonlytome"  // JWT secret key for token generation (Company side )
+const jwt_secretkey =  process.env.company_SECRET_KEY  // JWT secret key for token generation (Company side )
 
 fetchcompany = (req, res, next) => {
 

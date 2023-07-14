@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+require('dotenv').config();
 const port = process.env.PORT || 8000; // Later when hosting globally 
 
 require("./connection")

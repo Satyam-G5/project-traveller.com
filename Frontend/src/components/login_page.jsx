@@ -1,16 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Used for redirecting 
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login_page = () => {
   const [user, setUser] = useState({
     Name: '',
     age: '',
     email: '',
-    password: '',
+    password: ''
   });
   const navigate = useNavigate();
-
 
   const saveUser = async (event) => {
     event.preventDefault();
@@ -20,23 +18,19 @@ const Login_page = () => {
       const response = await fetch('/createuser', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           Name,
           age,
           email,
-          password,
-        }),
+          password
+        })
       });
 
       if (response.ok) {
         console.log('User saved to data');
-        // a.state.update();
-        // console.log("Update done")
-        // console.log(a.state.loggedin);
         navigate('/'); // Redirect to home page after successful login
-
       } else {
         console.log('Data not saved');
       }
@@ -50,13 +44,13 @@ const Login_page = () => {
   };
 
   const Navigate = () => {
-    navigate("/User_signIn")
-  }
+    navigate('/User_signIn');
+  };
 
   return (
     <>
       <div className="flex flex-col items-center justify-center h-screen">
-        <div className="bg-slate-900 p-8 rounded shadow-md w-1/3">
+        <div className="bg-slate-900 p-8 rounded shadow-md sm:w-2/3 md:w-1/2 lg:w-1/3">
           <h2 className="text-2xl font-bold text-center mb-4 text-white">Create New User Account</h2>
           <form>
             <div className="mb-4 text-white text-sm">
@@ -104,11 +98,11 @@ const Login_page = () => {
               />
             </div>
 
-            <div className='flex flex-row justify-between'>
+            <div className="flex flex-col sm:flex-row sm:justify-between">
               <button
                 type="submit"
                 onClick={saveUser}
-                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded"
+                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded mb-4 sm:mb-0"
               >
                 Create Account
               </button>
@@ -120,7 +114,6 @@ const Login_page = () => {
                 Sign In
               </button>
             </div>
-
           </form>
         </div>
       </div>
@@ -129,30 +122,3 @@ const Login_page = () => {
 };
 
 export default Login_page;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const jwt_secretkey = "justsomesercetknowntonooneexceptme"  // JWT secret key for token generation 
+const jwt_secretkey = process.env.user_SECRET_KEY  // JWT secret key for token generation 
 fetchuser = (req, res, next) => {
 
     // to get the user id from  the JWT token 

@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator');  // for input v
 
 const bcrypt = require("bcryptjs"); // hashing
 const jwt = require("jsonwebtoken"); // sending JWT tokens 
-const jwt_secretkey = "companysidesecreatkeyknownonlytome"  // JWT secret key for token generation (Company side )
+const jwt_secretkey = process.env.company_SECRET_KEY ; // JWT secret key for token generation (Company side )
 
 
 //****************** Creating a new company using post request "http://localhost:8000/api/cmp/newcomp" *************************
