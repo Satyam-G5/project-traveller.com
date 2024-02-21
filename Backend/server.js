@@ -1,11 +1,22 @@
 const express = require("express");
+
 const path = require("path");
+const cors = require("cors")
 require('dotenv').config();
 const port = process.env.PORT || 8000; // Later when hosting globally 
 
 require("./connection")
 
 const app = express()
+
+const corsOptions = {
+    origin: 'https://play-pals-zeta.vercel.app', // Allow requests from your client app
+    methods: ['GET', 'POST'], // Add other methods you need
+  };
+  
+  app.use(cors(
+corsOptions    ));
+
 
 app.use(express.json())   // build-in Middleware function for pasing json
 

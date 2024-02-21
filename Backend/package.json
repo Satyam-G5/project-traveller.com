@@ -1,4 +1,11 @@
+
 {
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.3.1",
